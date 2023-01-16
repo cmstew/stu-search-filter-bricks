@@ -8,6 +8,7 @@ class Stu_Element_Search_Filter_Form extends \Bricks\Element {
 	public $category     = 'Search & Filter'; // Use predefined element category 'general'
 	public $name         = 'stu-search-filter-form'; // Make sure to prefix your elements
 	public $icon         = 'ti-filter'; // Themify icon font class
+	public $scripts      = 'stuSearchFilterBricks';
 
 	// Return localised element label
 	public function get_label() {
@@ -30,6 +31,11 @@ class Stu_Element_Search_Filter_Form extends \Bricks\Element {
 			'content' => esc_html__( 'You must select "Custom" for the "Display Results Method" setting in your Search Form otherwise the filter won\'t work.' , 'bricks' ),
 			'type' => 'info',
 		];
+	}
+	
+	// Methods: Frontend-specific
+	public function enqueue_scripts() {
+		wp_enqueue_script( 'stu-search-filter-bricks' );
 	}
 
 	// Render element HTML
