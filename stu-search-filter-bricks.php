@@ -33,7 +33,7 @@ Class Stu_Search_Filter_Bricks {
 		add_action( 'wp_enqueue_scripts', function() {
 			// Enqueue your files on the canvas & frontend, not the builder panel. Otherwise custom CSS might affect builder)
 			if ( ! bricks_is_builder_main() ) {	
-				wp_register_script( 'stu-search-filter-bricks', plugin_dir_url( __FILE__ ) . 'assets/js/stu-search-filter-bricks.js', array('jquery'), filemtime(plugin_dir_path( __FILE__ ) . 'assets/js/stu-search-filter-bricks.js'));
+				wp_enqueue_script( 'stu-search-filter-bricks', plugin_dir_url( __FILE__ ) . 'assets/js/stu-search-filter-bricks.js', array('jquery'), filemtime(plugin_dir_path( __FILE__ ) . 'assets/js/stu-search-filter-bricks.js'));
 			}
 		} );
 

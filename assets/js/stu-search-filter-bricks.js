@@ -5,5 +5,5 @@ function stuSearchFilterBricks() {
 }
 
 document.addEventListener("DOMContentLoaded", function (e) {
-	if (bricksIsFrontend) stuSearchFilterBricks();
+	stuSearchFilterBricks();
 });
