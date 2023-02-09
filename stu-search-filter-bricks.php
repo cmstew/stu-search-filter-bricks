@@ -136,12 +136,18 @@ Class Stu_Search_Filter_Bricks {
 
 	// Method to get an array of Search & Filter Forms
 	public static function get_search_form_options() {
+		$args = [
+			'post_type' => 'search-filter-widget',
+			'post_status' => 'publish',
+			'posts_per_page' => -1
+		];
 
-		$custom_posts = new WP_Query('post_type=search-filter-widget&post_status=publish&posts_per_page=-1');
-
+		$custom_posts = new WP_Query($args);
 		$search_form_options = [];
-		foreach($custom_posts->posts as $post){
-			$search_form_options[$post->ID] = get_the_title($post->ID);
+		
+		while ($custom_posts->have_posts()) {
+			$custom_posts->the_post();
+			$search_form_options[get_the_ID()] = html_entity_decode(get_the_title());
 		}
 
 		wp_reset_postdata();
