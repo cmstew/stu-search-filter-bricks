@@ -3,7 +3,7 @@
  * Plugin Name: Search & Filter - Bricks Extension
  * Description: Makes it easier to use Search & Filter with Bricks
  * Author: Curtis Stewart
- * Version: 1.1
+ * Version: 1.2
  * License: GPL2
  */
 
