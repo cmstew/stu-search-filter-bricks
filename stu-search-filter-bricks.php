@@ -87,6 +87,9 @@ Class Stu_Search_Filter_Bricks {
 	// This function does the brunt of the work of setting up
 	// the controls for each supported Bricks Element
 	private static function get_bricks_controls($controls) {
+		
+		if (!bricks_is_builder_main()) return $controls;
+		
 		$ordered_controls = [];
 
 		// Loop over existing controls so we can inject our controls exactly where we want them
